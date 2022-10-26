@@ -1,0 +1,8 @@
+input::placeholder{
+    color: black;
+    opacity: 0;
+}
+::selection{
+    color: darkgray;
+    background-color: lightgray;
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block static_links %}
+        <link rel="icon" type="image/png" href="{% static '/core/images/favicons/favicon.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/core/css/fontawsome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/core/css/mdb.dark.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/core/css/mdb.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/core/css/core_stylesheet.css' %}">
+    {% endblock static_links %}
+    <title>Brezyy | {% block title %}Online Shopping{% endblock title %} </title>
+</head>
+<body>
+<div>
+    {#Head Element Starts#}
+    {% block head %}
+        <header>
+            <div class="d-flex">
+                <div>#Logo#</div>
+                <div>
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <input id="search-input" type="search" id="form1" class="form-control"/>
+                            <label class="form-label" for="form1">Search</label>
+                        </div>
+                        <button id="search-button" type="button" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>Cart</div>
+                <div>Delivey Location</div>
+                <div>Sign-Up</div>
+                <div>Log-In</div>
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-mdb-display="static" id="dropdownMenuButton"
+                            type="button" data-mdb-toggle="dropdown" aria-expanded="false">Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                        <li>
+                            <button class="dropdown-item" href="#">My Orders</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" href="#">Wishlist</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" href="#">Order History</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" href="#">Promo Codes</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" href="#">Get App</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" href="#">Contact Us</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" href="#">Customer Care</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <nav>
+
+        </nav>
+    {% endblock head %}
+    {# Head Element Ends#}
+
+    {# Body Element Starts#}
+    {% block body %}
+        <main>
+
+        </main>
+    {% endblock body %}
+    {# Body Element Ends#}
+
+    {#Foot Element Starts#}
+    {% block foot %}{% endblock foot %}
+</div>
+{#Foot Element Ends#}
+<script rel="script" type="text/javascript" src="{% static '/core/js/mdb.min.js' %}"></script>
+<script rel="script" type="text/javascript" src="{% static '/core/js/all.min.js' %}"></script>
+
+</body>
+</html>

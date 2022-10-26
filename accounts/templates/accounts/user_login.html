@@ -1,0 +1,65 @@
+<!doctype html>
+{% extends 'core/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block static_links %}
+        {{ block.super }}
+        <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/accounts_stylesheet.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/accounts_style.css' %}">
+    {% endblock static_links %}
+    <title>{% block title %}User Login{% endblock title %}</title>
+</head>
+<body>
+{% block head %}{% endblock head %}
+{% block body %}
+    <div class="container-fluid d-flex">
+        <div class="col-lg-4 col-md-7 col-sm-7 col-xs-12 justify-content-start">
+            <div class="col-auto m-5">
+                <form action="" method="POST" novalidate>
+                    {% csrf_token %}
+                    <div class="form-control col-auto col-md-auto bg-dark">
+                        {% for fm in form %}
+                            <div class="bg-dark m-2">
+                                <div class="form-label bg-dark">
+                                    {{ fm.label }}
+                                </div>
+                                <div class="bg-dark p-1">
+                                    {{ fm }}
+                                </div>
+                                <div class="errorlist bg-dark p-1">
+                                    {{ fm.errors|striptags }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="bg-dark d-grid p-1 justify-content-center">
+                            <div class="bg-dark">
+                                <a class="bg-dark w-100" href="{% url 'profile' %}">
+                                    <button class="btn btn-primary col-10 m-2 w-100" type="submit">Login</button>
+                                </a>
+                            </div>
+                            <div class="bg-dark">
+                                <a class="bg-dark w-100" href="{% url 'registration' %}">
+                                    <button class="btn btn-primary col-10 w-100 m-2" type="button">Sign-Up</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-8 col-md-5 col-sm-5 justify-content-end">
+            HECI
+        </div>
+    </div>
+{% endblock body %}
+
+{% block foot %}{% endblock foot %}
+</body>
+</html>
+
+{#            <img class="bg-img" src="https://source.unsplash.com/random/1400x1080/?wallpaper,landscape">#}

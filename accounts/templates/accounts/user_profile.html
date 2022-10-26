@@ -1,0 +1,37 @@
+<!doctype html>
+{% extends 'core/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/accounts_stylesheet.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/accounts_style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<div class="container-fluid">
+    {% block head %}{% endblock head %}
+
+    {% block body %}
+        <div>
+            Welcome To Brezyy {{ user.first_name }}
+            <a href="{% url 'logout' %}">
+                <button>Logout</button>
+            </a>
+            <a href="{% url 'changepassword' %}">
+                <button>Change Password</button>
+            </a>
+        </div>
+    {% endblock body %}
+
+    {% block foot %}{% endblock foot %}
+
+</div>
+
+</body>
+
+</html>

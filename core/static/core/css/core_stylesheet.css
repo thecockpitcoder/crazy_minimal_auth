@@ -1,0 +1,16 @@
+*{
+    font-family: sans-serif, "sans-serif Roboto";
+    box-sizing: border-box;
+    background-color: rgb(70,70,70);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+::-moz-selection{
+    color: darkblue;
+    background-color: darkgray;
+}
+::selection{
+    color: darkblue;
+    background-color: darkgray;
+}

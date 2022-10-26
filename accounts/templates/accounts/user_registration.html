@@ -1,0 +1,55 @@
+<!doctype html>
+{% extends 'core/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block static_links %}
+        {{ block.super }}
+        <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/accounts_stylesheet.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/accounts_style.css' %}">
+    {% endblock static_links %}
+    <title>{% block title %}Registration{% endblock title %}</title>
+</head>
+<body>
+{% block head %}{% endblock head %}
+{% block body %}
+    <div class="container-fluid d-flex">
+        <div>
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                <div class="form-control bg-dark">
+                    {% for fm in form %}
+                        <div class="bg-dark">
+                            {{ fm.label }}
+                        </div>
+                        <div class="bg-dark">
+                            {{ fm }}
+                        </div>
+                        <div class="bg-dark">
+                            {{ fm.errors|striptags }}
+                        </div>
+                    {% endfor %}
+                    <div class="d-grid justify-content-center bg-dark">
+                        <div class="bg-dark">
+                            <a href="{% url 'profile' %}">
+                                <button class="btn btn-dark" type="submit">Sign-Up</button>
+                            </a>
+                        </div>
+                        <div class="bg-dark">
+                            <a href="{% url 'login' %}">
+                                <button class="btn btn-dark" type="button">Login</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock body %}
+{% block foot %}{% endblock foot %}
+</body>
+</html>
